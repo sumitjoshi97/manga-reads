@@ -1,0 +1,17 @@
+{
+  "name": "manga-reads",
+  "version": "1.0.0",
+  "description": "manga reader app built with react js and node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Sj",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8"
+  }
+}
