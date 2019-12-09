@@ -4,7 +4,8 @@
   "description": "manga reader app built with react js and node",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js",
   },
   "author": "Sj",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "graphql": "^14.5.8"
   },
   "devDependencies": {
+    "concurrently": "^5.0.0",
     "nodemon": "^2.0.1"
   }
 }
