@@ -1,9 +1,7 @@
 const Manga = require('../../../models/Manga')
 
 const mangasResolver = () => {
-  return Manga.find({})
+  return Manga.find({}).sort({ lastUpdated: -1 })
 }
-
-console.log(mangasResolver())
 
 module.exports = mangasResolver

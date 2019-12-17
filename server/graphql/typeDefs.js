@@ -1,7 +1,10 @@
 const typeDefs = `
+  scalar Date
+
   type Manga {
-    id: ID!,
-    image: String!,
+    id: ID!
+    image: String
+    lastUpdated: Date!
     title: String!
   }
 

@@ -11,8 +11,6 @@ mongoose.connect(keys.DB_URL, {
   useUnifiedTopology: true,
 })
 
-require('./cron')
-
 const app = express()
 
 app.use(
