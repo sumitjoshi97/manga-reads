@@ -1,47 +1,16 @@
-const axios = require('axios')
-const cron = require('node-cron')
+import { schedule } from 'node-cron'
 
-const keys = require('./keys')
-const Manga = require('./models/Manga')
-
-const axiosManga = axios.create({
-  baseURL: keys.MANGA_EDEN_URL,
-})
-
-const transformMangaEden = manga =>
-  manga
-    .filter(manga => manga.ld)
-    .map(
-      ({
-        a: alias,
-        c: categories,
-        h: hits,
-        i: _id,
-        im: image,
-        ld: lastUpdated,
-        s: status,
-        t: title,
-      }) => ({
-        _id,
-        alias,
-        categories,
-        hits,
-        image,
-        lastUpdated,
-        status,
-        title,
-      })
-    )
+import { fetchaAllMangas } from './mangaSources/mangaEden'
 
 const seed = async () => {
-  const res = await axiosManga.get()
-  const mangas = transformMangaEden(res.data.manga)
+  const mangas = await fetchaAllMangas()
+  // const mangas = transformMangaEden(res.data.manga)
 
-  await Manga.insertMany(mangas)
+  await insertMany(mangas)
 }
 
 seed()
 
-cron.schedule('0 * * * *', () => {
+schedule('0 * * * *', () => {
   console.log('node task running every hour')
 })
