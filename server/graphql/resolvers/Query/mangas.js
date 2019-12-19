@@ -4,4 +4,4 @@ const mangasResolver = () => {
   return Manga.find({}).sort({ lastUpdated: -1 })
 }
 
-module.exports = mangasResolver
+export default mangasResolver

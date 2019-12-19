@@ -1,9 +1,9 @@
-const Manga = require('./Manga')
-const Query = require('./Query')
+import Manga from './Manga'
+import * as Query from './Query'
 
 const resolvers = {
   Manga,
   Query,
 }
 
-module.exports = resolvers
+export default resolvers

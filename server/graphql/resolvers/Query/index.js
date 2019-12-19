@@ -1,1 +1,1 @@
-module.exports = { mangas: () => require('./mangas')() }
+export { default as mangas } from './mangas'

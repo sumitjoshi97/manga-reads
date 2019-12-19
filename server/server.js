@@ -1,12 +1,12 @@
-const express = require('express')
-const graphqlHTTP = require('express-graphql')
+import express from 'express'
+import { ApolloServer } from 'apollo-server-express'
+import { connect } from 'mongoose'
 
-const mongoose = require('mongoose')
+import typeDefs from './graphql/typeDefs'
+import resolvers from './graphql/resolvers'
+import { DB_URL } from './keys'
 
-const schema = require('./graphql/schema')
-const keys = require('./keys')
-
-mongoose.connect(keys.DB_URL, {
+connect(DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -16,7 +16,7 @@ const app = express()
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  })
+})
 
 apolloServer.applyMiddleware({ app, path: '/graphql' })
 
