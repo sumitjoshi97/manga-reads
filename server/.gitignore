@@ -2,4 +2,4 @@
 /node_modules/
 
 # development keys
-/keys/dev.js
+/src/keys/dev.js
