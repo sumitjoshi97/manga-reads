@@ -4,9 +4,9 @@
   "description": "manga reader app built with react js and node",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "watch": "babel-watch server.js",
-    "watch:cron": "babel-watch cron.js"
+    "start": "node src/server.js",
+    "watch": "babel-watch src/server.js",
+    "watch:cron": "babel-watch src/cron.js"
   },
   "author": "Sj",
   "license": "MIT",

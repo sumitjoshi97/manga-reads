@@ -1,0 +1,19 @@
+{
+  "name": "manga-reads",
+  "version": "1.0.0",
+  "description": "manga reader app built with react, express, node, graphql, mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npm run watch --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitjoshi97/manga-reads.git"
+  },
+  "author": "Sj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumitjoshi97/manga-reads/issues"
+  },
+  "homepage": "https://github.com/sumitjoshi97/manga-reads#readme"
+}
