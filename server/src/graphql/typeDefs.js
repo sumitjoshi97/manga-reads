@@ -7,7 +7,7 @@ const typeDefs = gql`
     id: ID!
     lastUpdated: Date!
     number: String!
-    title: String!
+    title: String
   }
 
   type Manga {
