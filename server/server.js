@@ -13,15 +13,14 @@ mongoose.connect(keys.DB_URL, {
 
 const app = express()
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    graphiql: true,
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
   })
-)
 
-app.get('/', (req, res) => res.send('server running'))
+apolloServer.applyMiddleware({ app, path: '/graphql' })
+
+app.get('/', (req, res) => res.status(404).send('server running'))
 
 const port = process.env.PORT || 5000
 
