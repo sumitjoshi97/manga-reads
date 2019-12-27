@@ -1,0 +1,12 @@
+# node moudules
+/node_modules
+
+# environment variables
+.env
+.env-local
+
+# distribution folder
+/dist
+
+#cache folder
+/.cache
