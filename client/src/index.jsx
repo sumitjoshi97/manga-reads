@@ -1,25 +1,27 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
+import { BrowserRouter as Router } from 'react-router-dom'
+import graphqlClient from '#src/api/graphql'
 
-import graphqlClient from '#root/api/graphql'
-
-import App from '#root/App'
+import App from '#src/App'
+import '#src/global.scss'
 import 'antd/dist/antd.css'
-import '#root/global.scss'
 
 // if ('serviceWorker' in navigator) {
 //   navigator.serviceWorker.register('serviceWorker.js')
 // }
 
-// if (module.hot) {
-//   module.hot.accept()
-// }
-
 const app = (
   <ApolloProvider client={graphqlClient}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </ApolloProvider>
 )
 
 render(app, document.getElementById('app'))
+
+if (module.hot) {
+  module.hot.accept()
+}
