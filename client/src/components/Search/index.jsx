@@ -80,7 +80,7 @@ const options = dataSource
     </Option>,
   ])
 
-export default function Complete() {
+export default function Search() {
   return (
     <div className="certain-category-search-wrapper" style={{ width: 250 }}>
       <AutoComplete
