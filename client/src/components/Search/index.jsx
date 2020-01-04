@@ -80,19 +80,20 @@ const options = dataSource
     </Option>,
   ])
 
-export default function Search() {
+export default function Search({ onChange }) {
   return (
     <div className="certain-category-search-wrapper" style={{ width: 400 }}>
       <AutoComplete
         className="certain-category-search"
+        dataSource={options}
         dropdownClassName="certain-category-search-dropdown"
         dropdownMatchSelectWidth={false}
         dropdownStyle={{ width: 300 }}
+        placeholder="input here"
+        onChange={onChange}
+        optionLabelProp="value"
         size="large"
         style={{ width: '100%' }}
-        dataSource={options}
-        placeholder="input here"
-        optionLabelProp="value"
       >
         <Input
           suffix={<Icon type="search" className="certain-category-icon" />}
