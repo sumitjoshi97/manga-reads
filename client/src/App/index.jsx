@@ -1,12 +1,14 @@
 import React from 'react'
-import Search from '#src/components/Search'
+import { Switch, Route } from 'react-router-dom'
+
+import Home from '#src/views/Home'
 
 export default function App() {
   return (
     <div className="main-container">
-      <div className="main-container__search-container">
-        <Search />
-      </div>
+      <Switch>
+        <Route component={Home} path="/" />
+      </Switch>
     </div>
   )
 }
