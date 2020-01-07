@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server')
+import { gql } from 'apollo-server'
 
 const typeDefs = gql`
   scalar Date
@@ -24,9 +24,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    mangas(searchTitle: String): [Manga!]!
+    mangas(searchTitle: String!): [Manga!]!
     manga(id: ID!): Manga!
   }
 `
 
-module.exports = typeDefs
+export default typeDefs
